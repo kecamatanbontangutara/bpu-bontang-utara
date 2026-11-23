@@ -51,7 +51,7 @@
         
         // Cek apakah layar HP (< 768px) atau Desktop
         const isMobile = window.innerWidth < 768;
-       
+        const mode = isMobile ? "AGENDA" : "MONTH";
         const height = isMobile ? "420" : "580";
         const separator = baseCalendarUrl.includes("?") ? "&" : "?";
 

@@ -44,12 +44,11 @@
 
 
 <script>
-    function renderResponsiveCalendar() {
+    (function initResponsiveCalendar() {
         const container = document.getElementById('calendar-container');
         // GANTI dengan URL src embed Google Calendar Anda (tanpa parameter &mode=...)
         const baseCalendarUrl = "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FMakassar&showPrint=0&src=a2VjYW1hdGFuLmJvbnRhbmd1dGFyYUBnbWFpbC5jb20&src=NjNiYTAzMDAyNzMyNzAyYjA2MTg3ZWMwYmYyNWIzM2IyYjU1OWNhOTY1NTQ2ODRmOTM4MDYxMTQ0MWY3NzFiNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=aWQuaW5kb25lc2lhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
         
-        // Cek apakah layar HP (< 768px) atau Desktop
         const isMobile = window.innerWidth < 768;
         const mode = isMobile ? "AGENDA" : "MONTH";
         const height = isMobile ? "420" : "580";
@@ -63,14 +62,7 @@
                 scrolling="no">
             </iframe>
         `;
-    }
-
-    // Jalankan saat halaman dimuat dan saat ukuran layar berubah
-    renderResponsiveCalendar();
-    window.addEventListener('resize', () => {
-        clearTimeout(window.resizeTimer);
-        window.resizeTimer = setTimeout(renderResponsiveCalendar, 250);
-    });
+    })();
 </script>
             </div>
 
